@@ -1,22 +1,22 @@
 # Backend
-Essa é uma API foi construida para um desafio da Husky. Ela simula uma aplicação que gerencia
-entregas de delivery, onde se pode manipular os pedidos dos usuários.
+Essa é uma API que foi construída para um desafio da Husky. Ela simula uma aplicação que gerencia
+entregas de delivery, que se pode manipular os pedidos dos usuários.
 
 ## Projeto
 
-Essa aplicação é feita com PHP puro e utiliza todas as normas de programação seguindo as PSRs( PHP Standards Recommendations ), arquitetura e padrões de projeto como MVC , Active Record e Layer Supertype;
+Essa aplicação é feita com PHP puro e utiliza todas as normas de programação seguindo as PSRs (PHP Standards Recommendations), arquitetura e padrões de projeto como: MVC,  Active Record e Layer Supertype;
 
-### Requistos para rodar a API
-+ Servidor Apache (wamp,xampp ou qualquer um de sua preferência)
+### Requistos para executar a API
++ Servidor Apache (wamp, xampp ou qualquer um de sua preferência)
 + MySQL
-+ PHP version 7.4
++ PHP versão  7.4
 + Composer
 
 ## Instalação do Backend
 
 1° passo: 
 
-Dentro do diretório raiz do seu servidor apache(htdocs ou WWW, por exemplo), insira a pasta desse projeto com nome monorepo_husky ou através do git, utilizando o comando: git clone "https://github.com/netocastro/monorepo_husky.git" (sem as aspas). Caso não seja possível colocar no diretório raiz, será necessario mudar as rotas das requisições ajax no jquery, que será explicado mais adiante.
+Dentro do diretório raiz do seu servidor apache (htdocs ou WWW), insira a pasta desse projeto com nome monorepo_husky ou através do git, utilizando o comando git clone "https://github.com/netocastro/monorepo_husky.git" (sem as aspas). Caso não seja possível colocar no diretório raiz, será necessário mudar as rotas das requisições ajax no jquery, que será explicado mais adiante.
 
 2° passo:  
 
@@ -25,12 +25,12 @@ para se certificar da existência de todas as dependências.
 
 3° passo:
 
-Dentro do diretório backend, na pasta database execute o arquivo backend_huskye.sql em seu SGBD  para criar as tabelase popular o banco de dados.
+Dentro do diretório backend, na pasta database execute o arquivo backend_huskye.sql em seu SGBD  para criar as tabelas e popular o banco de dados.
 
 4° passo:
 
-Dentro da pasta src/Core se encontra o arquivo Config.php, nele vc precisa editar a
-constante BASE_PATH para o diretório no qual vc colocou a pasta do projeto. Esse passo só é necessário se as recomendações do passo 1 não forem implementadas. 
+Dentro da pasta src/Core se encontra o arquivo Config.php, nele você precisa editar a
+constante BASE_PATH para o diretório no qual você colocou a pasta do projeto. Esse passo só é necessário se as recomendações do passo 1 não forem implementadas. 
 
 Exemplo BASE_PATH:
 
@@ -66,18 +66,18 @@ Exemplo DATA_LAYER_CONFIG:
 
 
 O BASE_PATH reconhece automaticamente se o servidor é HTTP ou HTTPS.
-Se você estiver utilizando um certificado SSL, descomente as linhas 10, 11 e 12 no arquivo .htaccess
-que se encontra na raiz do projeto, removendo o "#". Depois disso é so acessar o projeto através do
-navegador, cliente de API REST como insomnia e postman ou através da documentação da dessa API, apartir da rota /documentation pra poder fazer as requisições com swagger.
+Se você estiver utilizando um certificado SSL, retire os comentários das linhas 10, 11 e 12 no arquivo .htaccess
+que se encontra na raiz do projeto, removendo o "#". Depois disso é só acessar o projeto através do
+navegador, cliente de API REST (insomnia ou postman) ou através da documentação dessa API, apartir da rota /documentation pra poder fazer as requisições com swagger.
 
     Ex: http://localhost/documentation
 
 ### Explicando o Backend
 
-O backend possui o CRUD de todas as tabelas do banco e dados e poderão ser acessadas através do swagger.
+O backend possui o CRUD de todas as tabelas do banco de dados e poderão ser acessadas através do swagger.
 
 ## Métodos
-Requisições para a API devem seguir os padrões:
+As requisições para a API devem seguir os padrões:
 
 ### Users
 | Método | URI | Descrição |
@@ -110,30 +110,30 @@ Requisições para a API devem seguir os padrões:
 ### Delivery
 | Método | URI | Descrição |
 |---|---|---|
-| `GET` | /delivery | Retorna todos os registros de deliveries do banco de dados.|
-| `GET` | /delivery/{id} | Retorna as informações de um delivery específico através do id no banco de dados. |
-| `POST` | /delivery | Insere um delivery no banco de dados. |
-| `PUT` | /delivery/{id} | Atualiza as informações de um delivery específico através do id no banco de dados.|
-| `DELETE` | /delivery/{id} | Deleta um delivery específico através do id no banco de dados. |
+| `GET` | /delivery | Retorna todos os registros de entregas do banco de dados.|
+| `GET` | /delivery/{id} | Retorna as informações de uma entrega específica através do id no banco de dados. |
+| `POST` | /delivery | Insere uma entrega no banco de dados. |
+| `PUT` | /delivery/{id} | Atualiza as informações de uma entrega específica através do id no banco de dados.|
+| `DELETE` | /delivery/{id} | Deleta uma entrega específica através do id no banco de dados. |
 
 ### Web
 Também foi criada uma rota Web, que serve para requisicões específicas do site, para não haver a necessidade
-de alterar as rotas padrões. Nela se pode faze requisoções como alterar apenas o status em uma tabela, alterar apenas o motoboy sem precisar as rotas padroes do CRUD. Essas rotas poderiam estar, se necessário dentro da rotas de suas respectivas tabelas, mas como são exclusivas para a função do site específico, optei por colocar em rotas diferentes.
+de alterar as rotas padrões. Nela se pode fazer requisições, como: alterar apenas o status em uma tabela, alterar apenas o motoboy sem precisar as rotas padrões do CRUD. Essas rotas poderiam estar, se necessário, dentro das rotas de suas respectivas tabelas, mas como são exclusivas para a função do site, optei por colocar em rotas diferentes.
 
 | Método | URI | Descrição |
 |---|---|---|
-| `POST` | /filterDeliveries | Retorna o filtro da pesquisa de pedidos entre motoboys estatus no banco de dados.|
+| `POST` | /filterDeliveries | Retorna o filtro da pesquisa de pedidos entre motoboys e/ou status no banco de dados.|
 | `POST` | /changeStatusDelivery | Atualiza apenas o status de um determinado pedido. |
-| `POST` | /changeMotoboyDelivery | Atualiza apenas o motoboy de um determinado pedido. |
+| `POST` | /changeMotoboyDelivery | Atualiza apenas um motoboy de um determinado pedido. |
 
 # Frontend
 
 ### Recursos disponíveis 
 
 * Acesso a todos os pedidos
-* troca de motoboys dos pedidos
-* troca de status do pedido
-* atualização de pedidos
+* Alteração de motoboys nos pedidos
+* Alteração de status do pedido
+* Atualização de pedidos
 * Criação de pedidos
 * Filtro de Pedidos por motoboys
 * Filtro de Pedidos por status
@@ -141,12 +141,12 @@ de alterar as rotas padrões. Nela se pode faze requisoções como alterar apena
 
 ### Como usar o front End
 
-O frontend do site foi criado de forma bem simples e intuitiva atendendo os requisitos do desafio.Na página inicial há apenas um texto explicando sobre o que é o site. Se as sugestões feitas na sessão de backend foram seguidas, basta acessar : https://localhost/monorepo_husky/frontend/index.html
+O frontend do site foi criado de forma simples e intuitiva atendendo os requisitos do desafio. Na página inicial há apenas um texto explicando sobre do que se trata o site. Se as sugestões feitas na sessão de backend foram seguidas, basta acessar : https://localhost/monorepo_husky/frontend/index.html
 
-Na barra de navegação você pode escolher entre vizualizar ou cadastrar as Entregas. Ao clicar em vizualizar você terá acesso a todos os pedidos com informações de usuários, motoboys, status, endereços de coleta, e endereços de destino podendo filtra-lós por motoboy, por status ou pelos dois.
+Na barra de navegação você pode escolher entre visualizar ou cadastrar entregas. Ao clicar em visualizar você terá acesso a todos os pedidos com informações dos usuários, motoboys, status, endereços de coleta e endereços de destino podendo filtrá-los por motoboy, por status ou pelos dois.
 
- Se quiser fazer uma pesquisa mais específica como por exemplo, qual os status das entregas de um motoboy.
- Ao lado das informações do pedido, existe um botão com o icone de um olho, nele vc se irá até a tela do pedido onde poderá alterar o motoboy que fará a entrega e o status do pedido. Se clicar em editar poderá editar todas as informações do pedido. 
+ Para fazer uma pesquisa mais específica como por exemplo, saber os status das entregas de um motoboy,
+ ao lado das informações do pedido existe um botão com o ícone de um olho, nele você irá até a tela do pedido onde poderá alterar o motoboy que fará a entrega e o status do pedido. Se clicar em editar poderá modificar todas as informações do pedido. 
 
 Por estarem em projetos diferentes, as URLs das requisições AJAX no frontend estão estáticas e são baseadas na URL do seu servidor. É necessário modificá-las com o caminho igual a da sua variável BASE_PATH no backend.
 
@@ -168,7 +168,7 @@ Exemplo:
         }
     });
 
-    Se estiver salvo em um diretório diferente, será necessário alteras todos os 4 arquivos javascripts com o endereço no qual a pasta do servidor foi adicionada 
+    Se estiver salvo em um diretório diferente, será necessário alterar todos os 4 arquivos javascripts com o endereço no qual a pasta do servidor foi adicionada. 
 
     $.ajax({
         url: 'https://localhost/<meu_diretorio>/monorepo_husky/backend/status',
@@ -185,13 +185,11 @@ Exemplo:
 
 ## Observações
 
-+ O BANCO DE DADOS FOI CRIARDO DE FORMA SIMPLES E OBJETIVA PARA ESSE PROJETO VIZANDO EXECUTAR O DESAFIO DE FORMA SUCINTA.
++ O BANCO DE DADOS FOI CRIADO DE FORMA SIMPLES E OBJETIVA PARA ESSE PROJETO VISANDO EXECUTAR O DESAFIO DE FORMA SUCINTA.
 
 + NÃO FORAM FEITAS TODAS AS VALIDAÇÕES POSSÍVEIS NO FRONTEND.
 
-+ A O TAMANHO DA PASTA DO PROJETO ESTÁ GRANDE POR CAUSA DA PASTA DO SWAGGER.
++ O TAMANHO DA PASTA DO PROJETO ESTÁ GRANDE POR CAUSA DA PASTA DO SWAGGER.
 
-+ AS CHAVES ESTRANGEIRAS DA TA TABELA DELIVERY DEVEM SER ADCIONADAS DEPENDENDO DO REQUERIMENTO DO PROJETO.
++ AS CHAVES ESTRANGEIRAS DA TABELA DELIVERY DEVEM SER ADICIONADAS DEPENDENDO DO REQUERIMENTO DO PROJETO.
 SENDO ASSIM, FORAM COLOCADAS TODAS AS CHAVES ESTRANGEIRAS COM UPDATE E DELETE CASCADE, DESSA FORMA OS AVALIADORES PODEM EXERCER O CRUD SEM SE PREOCUPAR COM AS RESTRIÇÕES.
-
-
