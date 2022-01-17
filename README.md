@@ -80,22 +80,20 @@ a url da constante ui para o diretório atual da pasta backend.
         layout: "StandaloneLayout"
     });
 
-
-Depois disso é só acessar o projeto através do navegador, cliente de API REST (insomnia ou postman) ou através da documentação dessa API, apartir da rota /documentation pra poder fazer as requisições com swagger.
-    Com o passo 1:
-    http://localhost/monorepo_husky/backend/documentation
-
-    Sem o passo 1:
+    Então a rota para docuemtação ficará:
 
     http://localhost/<meu_diretorio>/monorepo_husky/backend/documentation
+
+
+
+Depois disso é só acessar o projeto através do navegador, cliente de API REST (insomnia ou postman) ou através da documentação dessa API, apartir da do endpoint acima pra poder fazer as requisições com swagger.
 
     
 O BASE_PATH reconhece automaticamente se o servidor é HTTP ou HTTPS. Se você estiver utilizando um certificado SSL, retire os comentários das linhas 10, 11 e 12 no arquivo .htaccess que se encontra na raiz do projeto, removendo o "#". 
 
+
 Depois disso é só acessar o projeto através do navegador, cliente de API REST (insomnia ou postman) ou através da documentação dessa API, apartir da rota /documentation pra poder fazer as requisições com swagger.
 
-
-    
 
 ### Explicando o Backend
 
