@@ -16,7 +16,7 @@ Essa aplicação é feita com PHP puro e utiliza todas as normas de programaçã
 
 + Coloque a pasta desse projeto dentro da raiz diretório público seu servidor Apache, de preferência, como htdocs ou WWW, assim não será necessário modificar as rotas no frontend. Caso não seja possível, será explicado como editar o frontend mais adiante.
 
-+ Abra o terminal dentro da raiz do projeto e execute o comando: "composer update" (sem as aspas),
++ Abra o terminal dentro da pasta backend e execute o comando: "composer update" (sem as aspas),
 pra ter certeza que não falta algum componente.
 
 + Na raiz do projeto, na pasta database execute o arquivo database.sql em seu SGBD  para criar as tabelas
