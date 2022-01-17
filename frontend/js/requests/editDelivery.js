@@ -4,11 +4,11 @@ $(document).ready(function () {
     let id = window.location.search.replace("?", "");
 
     //Criando URL para fazer a atualização da entrega.
-    $('#update-delivery').attr('action', 'https://localhost/monorepo_husky/backend/delivery/' + id);
+    $('#update-delivery').attr('action', 'http://localhost/monorepo_husky/backend/delivery/' + id);
 
     //Requisição que buscar todos os usuários.
     $.ajax({
-        url: 'https://localhost/monorepo_husky/backend/user/',
+        url: 'http://localhost/monorepo_husky/backend/user/',
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
@@ -21,7 +21,7 @@ $(document).ready(function () {
 
     // Requisição que busca todos os Motoboys.
     $.ajax({
-        url: 'https://localhost/monorepo_husky/backend/motoboy/',
+        url: 'http://localhost/monorepo_husky/backend/motoboy/',
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     //Requisição que busca todos os status
     $.ajax({
-        url: 'https://localhost/monorepo_husky/backend/status/',
+        url: 'http://localhost/monorepo_husky/backend/status/',
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
@@ -57,7 +57,7 @@ $(document).ready(function () {
             data: _this.serialize(),
             success: (data) => {
                 validateFields(data, _this);
-                window.location.href = "https://localhost/monorepo_husky/frontend/vizualizar-entrega.html?" + data.id;
+                window.location.href = "http://localhost/monorepo_husky/frontend/vizualizar-entrega.html?" + data.id;
             },
             error: (error) => {
                 console.log(error.responseText);
@@ -68,7 +68,7 @@ $(document).ready(function () {
     // Ao mudar o usuário através do select, seu endereço é adicionado automaticamente ao campo de destino.
     $('#users').on('change', function (e) {
         $.ajax({
-            url: 'https://localhost/monorepo_husky/backend/user/' + $('#users').val(),
+            url: 'http://localhost/monorepo_husky/backend/user/' + $('#users').val(),
             type: 'GET',
             dataType: "JSON",
             success: (data) => {
@@ -116,7 +116,7 @@ $(document).ready(function () {
 
     //Reuisição que busca a Entrega que será editada.
     $.ajax({
-        url: 'https://localhost/monorepo_husky/backend/delivery/' + id,
+        url: 'http://localhost/monorepo_husky/backend/delivery/' + id,
         type: 'GET',
         dataType: "JSON",
         success: (data) => {

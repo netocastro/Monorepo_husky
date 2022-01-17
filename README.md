@@ -147,14 +147,14 @@ Na barra de navegação você pode escolher entre visualizar ou cadastrar entreg
 
 Por estarem em projetos diferentes, as URLs das requisições AJAX no frontend estão estáticas e são baseadas na URL do seu servidor. É necessário modificá-las com o caminho igual a da sua variável BASE_PATH no backend.
 
-Se seu servidor não possuir SSL eliminar o s em "https://".
+Se seu servidor possuir SSL adicionar o s em "http://" pra se tornar "https://". 
 
 Exemplo:
 
     Se decidir extrair todos os arquivos da pasta do projeto dentro da raiz da sua pasta pública do servidor, como descritas no passo 1, não será necessário fazer essa alteração, logo o JQuery estará assim:
 
 	$.ajax({
-        url: 'https://localhost/monorepo_husky/backend/status',
+        url: 'http://localhost/monorepo_husky/backend/status',
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
@@ -168,7 +168,7 @@ Exemplo:
     Se estiver salvo em um diretório diferente, será necessário alterar todos os 4 arquivos javascripts com o endereço no qual a pasta do servidor foi adicionada. 
 
     $.ajax({
-        url: 'https://localhost/<meu_diretorio>/monorepo_husky/backend/status',
+        url: 'http://localhost/<meu_diretorio>/monorepo_husky/backend/status',
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
