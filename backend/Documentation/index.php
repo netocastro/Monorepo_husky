@@ -29,7 +29,7 @@
       }
     </style>
   </head>
-
+<?= BASE_PATH ?>
   <body>
     <div id="swagger-ui"></div>
     <script src="./swagger/swagger-ui-bundle.js" charset="UTF-8"> </script>

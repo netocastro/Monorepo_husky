@@ -16,7 +16,7 @@ Essa aplicação é feita com PHP puro e utiliza todas as normas de programaçã
 
 1° passo: 
 
-Dentro do diretório raiz do seu servidor apache (htdocs ou WWW), insira a pasta desse projeto com nome monorepo_husky ou através do git, utilizando o comando git clone https://github.com/netocastro/monorepo_husky.git. Caso não seja possível colocar no diretório raiz, será necessário mudar as rotas das requisições ajax no jquery, que será explicado mais adiante.
+Dentro do diretório raiz do seu servidor apache (htdocs ou WWW), insira a pasta desse projeto com nome monorepo_husky ou através do git: git clone https://github.com/netocastro/monorepo_husky.git. Caso não seja possível colocar no diretório raiz, será necessário mudar as rotas das requisições ajax no jquery, que será explicado mais adiante.
 
 2° passo:  
 
@@ -61,13 +61,41 @@ Exemplo BASE_PATH:
 
     define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}/<minha_pasta>/monorepo_husky/backend");  
 
+5° passo:
 
-O BASE_PATH reconhece automaticamente se o servidor é HTTP ou HTTPS.
-Se você estiver utilizando um certificado SSL, retire os comentários das linhas 10, 11 e 12 no arquivo .htaccess
-que se encontra na raiz do projeto, removendo o "#". Depois disso é só acessar o projeto através do
-navegador, cliente de API REST (insomnia ou postman) ou através da documentação dessa API, apartir da rota /documentation pra poder fazer as requisições com swagger.
+Caso o passo 1 não tenha sido seguido, é preciso ir na pasta documentation, no arquivo index.php e editar
+a url da constante ui para o diretório atual da pasta backend.
 
-    Ex: http://localhost/documentation
+    const ui = SwaggerUIBundle({
+        url: "https://localhost/<meu_diretorio>/monorepo_husky/backend/documentation/Api.php",
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: "StandaloneLayout"
+    });
+
+
+Depois disso é só acessar o projeto através do navegador, cliente de API REST (insomnia ou postman) ou através da documentação dessa API, apartir da rota /documentation pra poder fazer as requisições com swagger.
+    Com o passo 1:
+    http://localhost/monorepo_husky/backend/documentation
+
+    Sem o passo 1:
+
+    http://localhost/<meu_diretorio>/monorepo_husky/backend/documentation
+
+    
+O BASE_PATH reconhece automaticamente se o servidor é HTTP ou HTTPS. Se você estiver utilizando um certificado SSL, retire os comentários das linhas 10, 11 e 12 no arquivo .htaccess que se encontra na raiz do projeto, removendo o "#". 
+
+Depois disso é só acessar o projeto através do navegador, cliente de API REST (insomnia ou postman) ou através da documentação dessa API, apartir da rota /documentation pra poder fazer as requisições com swagger.
+
+
+    
 
 ### Explicando o Backend
 
