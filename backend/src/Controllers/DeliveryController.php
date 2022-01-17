@@ -153,7 +153,6 @@ class DeliveryController
      */
     public function update(array $data): void
     {
-        echo json_encode($data);exit;
         $data = filter_var_array($data, [
             "id" => FILTER_SANITIZE_NUMBER_INT,
             "user_id" => FILTER_SANITIZE_NUMBER_INT,
