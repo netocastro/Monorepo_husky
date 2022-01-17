@@ -13,7 +13,7 @@ class StatusController
      *     path="/monorepo_husky/backend/status",
      *     tags={"Status"},
      *     summary="Retorna o registro de todos os status.",
-     *         *     @OA\Response(
+     *     @OA\Response(
      *         response=200,
      *         description="successful operation",
      *         @OA\JsonContent(
@@ -27,6 +27,7 @@ class StatusController
         echo json_encode(objectToArray((new Status())->find()->fetch(true)));
     }
 
+    
     public function store(array $data): void
     {
         $status = new Status();

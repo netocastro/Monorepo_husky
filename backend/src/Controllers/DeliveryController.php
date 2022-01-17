@@ -18,6 +18,7 @@ class DeliveryController
      *     path="/monorepo_husky/backend/delivery",
      *     tags={"Delivery"},
      *     summary="Retorna o registro de todas as entregas.",
+     * 
      *     @OA\Response(
      *         response=200,
      *         description="successful operation",
@@ -106,36 +107,6 @@ class DeliveryController
         }
     }
 
-    /**
-     * @OA\Put(
-     *     path="/monorepo_husky/backend/delivery/{id}",
-     *     tags={"Delivery"},
-     *     summary="Atualiza uma entrega.",
-     *     operationId="id",
-     *     @OA\Parameter(
-     *         name="id",
-     *         in="path",
-     *         description="id do usuario para atualizar",
-     *         required=true,
-     *         @OA\Schema(
-     *             type="string"
-     *         )
-     *         values = {
-     *              "name": "vehicle 1",
-     *              "model": "Tesla"
-     *         },
-     *     ),
-     *     
-     *     @OA\Response(
-     *         response=400,
-     *         description="Invalid username supplied",
-     *     ),
-     *     @OA\Response(
-     *         response=404,
-     *         description="User not found",
-     *     )
-     * )
-     */
     public function update(array $data): void
     {
         $data = filter_var_array($data, [
