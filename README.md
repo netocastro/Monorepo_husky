@@ -14,21 +14,23 @@ Essa aplicação é feita com PHP puro e utiliza todas as normas de programaçã
 
 ## Instalação do Backend
 
-+ 1° passo: 
+1° passo: 
 
 Dentro do diretório raiz do seu servidor apache(htdocs ou WWW, por exemplo), insira a pasta desse projeto com nome monorepo_husky ou através do git, utilizando o comando: git clone "https://github.com/netocastro/monorepo_husky.git" (sem as aspas). Caso não seja possível colocar no diretório raiz, será necessario mudar as rotas das requisições ajax no jquery, que será explicado mais adiante.
 
-+ Coloque a pasta desse projeto dentro da raiz diretório público seu servidor Apache, ou utilize o comando git clone, de preferência, como htdocs ou WWW, assim não será necessário modificar as rotas no frontend. Caso não seja possível, será explicado como editar o frontend mais adiante
+2° passo:  
 
-+ Abra o terminal dentro da pasta backend e execute o comando: "composer update" (sem as aspas),
-pra ter certeza que não falta algum componente.
+Abra o terminal dentro da pasta backend e execute o comando: "composer update" (sem as aspas),
+para se certificar da existência de todas as dependências.
 
-+ Na raiz do projeto, na pasta database execute o arquivo backend_huskye.sql em seu SGBD  para criar as tabelas
-e popular o banco de dados.
+3° passo:
 
-+ Dentro da pasta src/Core se encontra o arquivo Config.php, nele vc precisa editar a
-constante BASE_PATH para o diretorio no qual vc colocou a pasta do projeto.
-Também terá que editar a constante DATA_LAYER_CONFIG com as informações do seu banco de dados.
+Dentro do diretório backend, na pasta database execute o arquivo backend_huskye.sql em seu SGBD  para criar as tabelase popular o banco de dados.
+
+4° passo:
+
+Dentro da pasta src/Core se encontra o arquivo Config.php, nele vc precisa editar a
+constante BASE_PATH para o diretório no qual vc colocou a pasta do projeto. Esse passo só é necessário se as recomendações do passo 1 não forem implementadas. 
 
 Exemplo BASE_PATH:
 
@@ -39,6 +41,10 @@ Exemplo BASE_PATH:
     Caso não, edite para o diretório onde vc colocou a pasta, assim:
 
     define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}/<minha_pasta>");  
+
+5° passo:
+
+Também será necessário editar a constante DATA_LAYER_CONFIG com as informações do seu banco de dados.
 
 Exemplo DATA_LAYER_CONFIG:
    
@@ -57,7 +63,6 @@ Exemplo DATA_LAYER_CONFIG:
         ],
     ]);
 
-    
 
 O BASE_PATH reconhece automaticamente se o servidor é HTTP ou HTTPS.
 Se você estiver utilizando um certificado SSL, descomente as linhas 10, 11 e 12 no arquivo .htaccess
