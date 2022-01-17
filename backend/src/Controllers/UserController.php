@@ -9,7 +9,7 @@ class UserController
     /**
      * 
      * @OA\Get(
-     *     path="/development/entrevistas/Husky/user",
+     *     path="/monorepo_husky/backend/user",
      *     tags={"User"},
      *     summary="Retorna o registro de todos os usuários.",
      *         *     @OA\Response(
@@ -41,6 +41,29 @@ class UserController
         echo json_encode(["success" => "salvo com sucesso"]);
     }
 
+    /**
+     * @OA\Get(
+     *     path="/monorepo_husky/backend/user/{id}",
+     *     tags={"User"},
+     *     summary="Essa rota devolve apenas um usuario especifico atraves do id.",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="id do usuario   ",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="successful operation",
+     *         @OA\JsonContent(
+     *             type="string"
+     *         ),
+     *     ),
+     * )
+     */
     public function show(array $data): void
     {
         $id = filter_var($data['id'], FILTER_SANITIZE_NUMBER_INT);
@@ -67,7 +90,7 @@ class UserController
 
     /**
      * @OA\Delete(
-     *     path="/development/entrevistas/Husky/user/{id} ",
+     *     path="/monorepo_husky/backend/user/{id} ",
      *     tags={"User"},
      *     summary="Deleta um registro de usuario.",
      *     @OA\Parameter(

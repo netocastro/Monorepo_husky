@@ -10,7 +10,7 @@ class StatusController
     /**
      * 
      * @OA\Get(
-     *     path="/development/entrevistas/Husky/status",
+     *     path="/monorepo_husky/backend/status",
      *     tags={"Status"},
      *     summary="Retorna o registro de todos os status.",
      *         *     @OA\Response(
@@ -41,6 +41,29 @@ class StatusController
         echo json_encode(["success" => "salvo com sucesso"]);
     }
 
+    /**
+     * @OA\Get(
+     *     path="/monorepo_husky/backend/status/{id}",
+     *     tags={"Status"},
+     *     summary="Essa rota devolve apenas um status especifico atraves do id.",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="id do status",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="successful operation",
+     *         @OA\JsonContent(
+     *             type="string"
+     *         ),
+     *     ),
+     * )
+     */
     public function show(array $data): void
     {
         $id = filter_var($data['id'], FILTER_SANITIZE_NUMBER_INT);
@@ -64,7 +87,7 @@ class StatusController
 
     /**
      * @OA\Delete(
-     *     path="/development/entrevistas/Husky/status/{id} ",
+     *     path="/monorepo_husky/backend/status/{id} ",
      *     tags={"Status"},
      *     summary="Deleta um registro de um status.",
      *     @OA\Parameter(

@@ -15,7 +15,7 @@ class DeliveryController
      * mas também para retornar o nome do status, nome do motoboy, e nome de seus respectivos ids.
      * 
      * @OA\Get(
-     *     path="/development/entrevistas/Husky/delivery",
+     *     path="/monorepo_husky/backend/delivery",
      *     tags={"Delivery"},
      *     summary="Retorna o registro de todas as entregas.",
      *     @OA\Response(
@@ -63,6 +63,29 @@ class DeliveryController
         echo json_encode(["success" => "salvo com sucesso"]);
     }
 
+    /**
+     * @OA\Get(
+     *     path="/monorepo_husky/backend/delivery/{id}",
+     *     tags={"Delivery"},
+     *     summary="Essa rota devolve apenas uma entrega especifica atraves do id.",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="id da entrega",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="successful operation",
+     *         @OA\JsonContent(
+     *             type="string"
+     *         ),
+     *     ),
+     * )
+     */
     public function show(array $data): void
     {
         $id = filter_var($data['id'], FILTER_SANITIZE_NUMBER_INT);
@@ -85,9 +108,10 @@ class DeliveryController
 
     /**
      * @OA\Put(
-     *     path="/development/entrevistas/Husky/delivery/{id} ",
+     *     path="/monorepo_husky/backend/delivery/{id}",
      *     tags={"Delivery"},
      *     summary="Atualiza uma entrega.",
+     *     operationId="id",
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -96,51 +120,12 @@ class DeliveryController
      *         @OA\Schema(
      *             type="string"
      *         )
+     *         values = {
+     *              "name": "vehicle 1",
+     *              "model": "Tesla"
+     *         },
      *     ),
-     *      @OA\Parameter(
-     *         name="collection_address",
-     *         in="query",
-     *         description="Endereço de coleta",
-     *         required=true,
-     *         @OA\Schema(
-     *             type="string"
-     *         )
-     *     ),
-     *      @OA\Parameter(
-     *         name="destination_address",
-     *         in="query",
-     *         description="Endereço de destino",
-     *         required=true,
-     *         @OA\Schema(
-     *             type="string"
-     *         )
-     *     ),
-     *     @OA\Parameter(
-     *         name="user_id",
-     *         in="query",
-     *         description="Id do usuario",
-     *         required=true,
-     *         @OA\Schema(
-     *             type="string"
-     *         )
-     *     ),
-     *     @OA\Parameter(
-     *         name="motoboy_id",
-     *         in="query",
-     *         description="Id do motoboy",
-     *         @OA\Schema(
-     *             type="string"
-     *         )
-     *     ),
-     *     @OA\Parameter(
-     *         name="status",
-     *         in="query",
-     *         description="Id do status",
-     *         required=true,
-     *         @OA\Schema(
-     *             type="string"
-     *         )
-     *     ),
+     *     
      *     @OA\Response(
      *         response=400,
      *         description="Invalid username supplied",
@@ -153,6 +138,7 @@ class DeliveryController
      */
     public function update(array $data): void
     {
+        echo json_encode($data);exit;
         $data = filter_var_array($data, [
             "id" => FILTER_SANITIZE_NUMBER_INT,
             "user_id" => FILTER_SANITIZE_NUMBER_INT,
@@ -193,7 +179,7 @@ class DeliveryController
 
     /**
      * @OA\Delete(
-     *     path="/development/entrevistas/Husky/delivery/{id} ",
+     *     path="/monorepo_husky/backend/delivery/{id} ",
      *     tags={"Delivery"},
      *     summary="Deleta o registro de uma entrega.",
      *     @OA\Parameter(

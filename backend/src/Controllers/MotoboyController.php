@@ -9,7 +9,7 @@ class MotoboyController
     /**
      * 
      * @OA\Get(
-     *     path="/development/entrevistas/Husky/motoboy",
+     *     path="/monorepo_husky/backend/motoboy",
      *     tags={"Motoboy"},
      *     summary="Retorna o registro de todos os motoboys.",
      *         *     @OA\Response(
@@ -41,6 +41,29 @@ class MotoboyController
         echo json_encode(["success" => "salvo com sucesso"]);
     }
 
+    /**
+     * @OA\Get(
+     *     path="/monorepo_husky/backend/motoboy/{id}",
+     *     tags={"Motoboy"},
+     *     summary="Essa rota devolve apenas um motoboy especifico atraves do id.",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="id do motoboy",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="successful operation",
+     *         @OA\JsonContent(
+     *             type="string"
+     *         ),
+     *     ),
+     * )
+     */
     public function show(array $data): void
     {
         $id = filter_var($data['id'], FILTER_SANITIZE_NUMBER_INT);
@@ -65,7 +88,7 @@ class MotoboyController
 
     /**
      * @OA\Delete(
-     *     path="/development/entrevistas/Husky/motoboy/{id} ",
+     *     path="/monorepo_husky/backend/motoboy/{id} ",
      *     tags={"Motoboy"},
      *     summary="Deleta o registro de um motoboy.",
      *     @OA\Parameter(
