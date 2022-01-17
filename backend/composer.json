@@ -1,0 +1,27 @@
+{
+    "name": "neto-pc/husky",
+    "description": "backend feito para desafio da Husky.",
+    "type": "project", 
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Source\\": "src/"
+        },
+        "files": [
+            "src/Core/Config.php",
+            "src/Core/Functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Neto Castro",
+            "email": "netocastrotec@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "stonks/datalayer": "^1.0",
+        "stonks/router": "^1.0",
+        "zircote/swagger-php": "^4.2"
+    }
+}
