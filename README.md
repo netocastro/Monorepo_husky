@@ -14,7 +14,8 @@ Essa aplicação é feita com PHP puro e utiliza todas as normas de programaçã
 
 ## Instalação do Backend
 
-+ <h3>1 passo</h3>: Dentro do diretório raiz do seu servidor apache(htdocs ou WWW, por exemplo), insira a pasta desse projeto com nome monorepo_husky ou através do git, utilizando o comando: git clone "https://github.com/netocastro/monorepo_husky.git" (sem as aspas). Caso não seja possível colocar no diretório raiz, será necessario mudar as rotas das requisições ajax no jquery, que será explicado mais adiante.
++ 1° passo: 
+Dentro do diretório raiz do seu servidor apache(htdocs ou WWW, por exemplo), insira a pasta desse projeto com nome monorepo_husky ou através do git, utilizando o comando: git clone "https://github.com/netocastro/monorepo_husky.git" (sem as aspas). Caso não seja possível colocar no diretório raiz, será necessario mudar as rotas das requisições ajax no jquery, que será explicado mais adiante.
 
 + Coloque a pasta desse projeto dentro da raiz diretório público seu servidor Apache, ou utilize o comando git clone, de preferência, como htdocs ou WWW, assim não será necessário modificar as rotas no frontend. Caso não seja possível, será explicado como editar o frontend mais adiante
 
