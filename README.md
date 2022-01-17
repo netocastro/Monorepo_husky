@@ -131,9 +131,9 @@ de alterar as rotas padrões. Nela se pode faze requisoções como alterar apena
 
 ### Como usar o front End
 
-O frontend do site foi criado de forma bem simples e intuitiva atendendo os requisitos do desafio.Na página inicial há apenas um texto explicando sobre o que é o site. 
+O frontend do site foi criado de forma bem simples e intuitiva atendendo os requisitos do desafio.Na página inicial há apenas um texto explicando sobre o que é o site. Se as sugestões feitas na sessão de backend foram seguidas, basta acessar : https://localhost/monorepo_husky/frontend/index.html
 
-Na barra de navegação você pode escolher entre vizualizar ou cadastrar as Entregas. Ao clicar em vizualizar vc terá acesso a todos os pedidos com informações de usuários, motoboys, status, endereços de coleta, e endereços de destino podendo filtra-lós por motoboy, por status ou pelos dois.
+Na barra de navegação você pode escolher entre vizualizar ou cadastrar as Entregas. Ao clicar em vizualizar você terá acesso a todos os pedidos com informações de usuários, motoboys, status, endereços de coleta, e endereços de destino podendo filtra-lós por motoboy, por status ou pelos dois.
 
  Se quiser fazer uma pesquisa mais específica como por exemplo, qual os status das entregas de um motoboy.
  Ao lado das informações do pedido, existe um botão com o icone de um olho, nele vc se irá até a tela do pedido onde poderá alterar o motoboy que fará a entrega e o status do pedido. Se clicar em editar poderá editar todas as informações do pedido. 
@@ -157,7 +157,7 @@ Exemplo:
         }
     });
 
-    Se seguiu as recomendações da sessão sobre backend, não precisará modificar o frontend, então as requisições estaram assim:
+    Se seguiu as recomendações da sessão sobre backend, não precisará modificar o frontend, então as requisições estarão assim:
 
     $.ajax({
         url: 'https://localhost/monorepo_husky/backend/status',
