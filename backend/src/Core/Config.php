@@ -7,7 +7,7 @@ header('Content-Type: application/json');
 
 $s = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 's' : '');
 
-define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}/development/entrevistas/Husky");
+define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}/backend");
 
 define('DATA_LAYER_CONFIG', [
 	'driver' => 'mysql',

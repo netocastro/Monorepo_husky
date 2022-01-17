@@ -2,7 +2,7 @@ $(document).ready(function () {
  
     // Requisição que busca todas as Entregas.
     $.ajax({
-        url: 'https://localhost/development/entrevistas/Husky/delivery/',
+        url: 'https://localhost/backend/delivery/',
         type: 'GET',
         dataType: "JSON",
         data: '',
@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     // Requisição que busca todos os Motoboys.
     $.ajax({
-        url: 'https://localhost/development/entrevistas/Husky/motoboy/',
+        url: 'https://localhost/backend/motoboy/',
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
@@ -29,7 +29,7 @@ $(document).ready(function () {
 
     // Requisição que busca todos os Status.
     $.ajax({
-        url: 'https://localhost/development/entrevistas/Husky/status/',
+        url: 'https://localhost/backend/status/',
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
@@ -48,7 +48,7 @@ $(document).ready(function () {
         };
 
         $.ajax({
-            url: 'https://localhost/development/entrevistas/Husky/web/filterDeliveries',
+            url: 'https://localhost/backend/web/filterDeliveries',
             type: 'POST',
             dataType: "JSON",
             data: request,
@@ -75,7 +75,7 @@ $(document).ready(function () {
                     <td id="${element.status}">${element.status_name}</td>
                     <td >${element.collection_address}</td>
                     <td >${element.destination_address}</td>
-                    <td ><a href="https://localhost/development/entrevistas/Husky_frontend/vizualizar-entrega.html?${element.id}"><i class="fas fa-eye"></i></a></td>
+                    <td ><a href="https://localhost/frontend/vizualizar-entrega.html?${element.id}"><i class="fas fa-eye"></i></a></td>
                 </tr>
             `).fadeIn();
         });
@@ -96,7 +96,7 @@ $(document).ready(function () {
                     <td id="${element.status}">${element.status_name}</td>
                     <td >${element.collection_address}</td>
                     <td >${element.destination_address}</td>
-                    <td ><a href="https://localhost/development/entrevistas/Husky_frontend/vizualizar-entrega.html?${element.id}"><i class="fas fa-eye"></i></a></td>
+                    <td ><a href="https://localhost/frontend/vizualizar-entrega.html?${element.id}"><i class="fas fa-eye"></i></a></td>
                 </tr>
             `).fadeIn();
         });
