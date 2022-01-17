@@ -33,7 +33,8 @@ class Web
         ]);
 
         if ($data['status_id'] == 0 && $data['motoboy_id'] != 0) {
-            $deliveriesFilter = (new Delivery())->find("motoboy_id = :m", "m={$data['motoboy_id']}")->fetch(true);
+            $deliveriesFilter = (new Delivery())->find(
+                "motoboy_id = :m", "m={$data['motoboy_id']}")->fetch(true);
             if ($deliveriesFilter) {
                 foreach ($deliveriesFilter as $value) {
                     $value->data()->user_name = $value->user_name();

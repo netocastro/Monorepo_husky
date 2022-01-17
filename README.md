@@ -151,12 +151,13 @@ Na barra de navegação você pode escolher entre vizualizar ou cadastrar as Ent
 Por estarem em projetos diferentes, as URLs das requisições AJAX no frontend estão estáticas e são baseadas na URL do seu servidor. É necessário modificá-las com o caminho igual a da sua variável BASE_PATH no backend.
 
 Se seu servidor não possuir SSL eliminar o s em "https://".
+
 Exemplo:
 
-    Se decidir extrair todos os arquivos da pasta do backend dentro da raiz da sua pasta pública, as requisições devem ser feitas assim assim,:
+    Se decidir extrair todos os arquivos da pasta do projeto dentro da raiz da sua pasta pública do servidor, como descritas no passo 1, não será necessário fazer essa alteração, logo o JQuery estará assim:
 
 	$.ajax({
-        url: 'https://localhost/status',
+        url: 'https://localhost/monorepo_husky/backend/status',
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
@@ -167,10 +168,10 @@ Exemplo:
         }
     });
 
-    Se seguiu as recomendações da sessão sobre backend, não precisará modificar o frontend, então as requisições estarão assim:
+    Se estiver salvo em um diretório diferente, será necessário alteras todos os 4 arquivos javascripts com o endereço no qual a pasta do servidor foi adicionada 
 
     $.ajax({
-        url: 'https://localhost/monorepo_husky/backend/status',
+        url: 'https://localhost/<meu_diretorio>/monorepo_husky/backend/status',
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
