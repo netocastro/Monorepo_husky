@@ -25,26 +25,9 @@ para se certificar da existência de todas as dependências.
 
 3° passo:
 
-Dentro do diretório backend, na pasta database execute o arquivo backend_huskye.sql em seu SGBD  para criar as tabelas e popular o banco de dados.
+Dentro do diretório backend, na pasta database execute o arquivo backend_huskye.sql em seu SGBD  para criar as tabelas e popular o banco de dados. De preferência crie sua database com o mesmo nome do arquivo, arquivo "backend_husky", editando dentro do Config.php.
 
-4° passo:
-
-Dentro da pasta src/Core se encontra o arquivo Config.php, nele você precisa editar a
-constante BASE_PATH para o diretório no qual você colocou a pasta do projeto. Esse passo só é necessário se as recomendações do passo 1 não forem implementadas. 
-
-Exemplo BASE_PATH:
-
-    Se o aquivo foi extraído para a raiz da sua pasta pública, matenha a constante assim:
-
-	define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}");  
-
-    Caso não, edite para o diretório onde vc colocou a pasta, assim:
-
-    define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}/<minha_pasta>");  
-
-5° passo:
-
-Também será necessário editar a constante DATA_LAYER_CONFIG com as informações do seu banco de dados.
+Será necessário editar a constante DATA_LAYER_CONFIG com as informações do seu banco de dados, caso crie um banco de dados com nome diferente.Se seguiu o passo 1, não precisa alterar nada, a não ser usuário e senha do banco de dados se não forem padrões do MySQL.
 
 Exemplo DATA_LAYER_CONFIG:
    
@@ -63,6 +46,20 @@ Exemplo DATA_LAYER_CONFIG:
         ],
     ]);
 
+4° passo:
+
+Dentro da pasta src/Core se encontra o arquivo Config.php, nele você precisa editar a
+constante BASE_PATH para o diretório no qual você colocou a pasta do projeto. Esse passo só é necessário se as recomendações do passo 1 não forem implementadas. 
+
+Exemplo BASE_PATH:
+
+    Se o aquivo foi extraído para a raiz da sua pasta pública, matenha a constante assim:
+
+	define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}/monorepo_husky/backend");  
+
+    Caso não, edite para o diretório onde vc colocou a pasta, assim:
+
+    define("BASE_PATH", "http{$s}://{$_SERVER['HTTP_HOST']}/<minha_pasta>/monorepo_husky/backend");  
 
 
 O BASE_PATH reconhece automaticamente se o servidor é HTTP ou HTTPS.
