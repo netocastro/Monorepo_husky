@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     // Requisição que busca todos os Motoboys.
     $.ajax({
-        url: 'https://localhost/backend/motoboy/',
+        url: 'https://localhost/monorepo_husky/backend/motoboy/',
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
@@ -15,7 +15,7 @@ $(document).ready(function () {
 
     //Requisição que buscar todos os usuários.
     $.ajax({
-        url: 'https://localhost/backend/user/',
+        url: 'https://localhost/monorepo_husky/backend/user/',
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
@@ -48,7 +48,7 @@ $(document).ready(function () {
     //Requisição usada para buscar o endereço dos clientes.
     $('#users').on('change', function (e) {
         $.ajax({
-            url: 'https://localhost/backend/user/' + $('#users').val(),
+            url: 'https://localhost/monorepo_husky/backend/user/' + $('#users').val(),
             type: 'GET',
             dataType: "JSON",
             success: (data) => {

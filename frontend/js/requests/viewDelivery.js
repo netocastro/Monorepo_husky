@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     // Requisição que busca uma Entrega expecifica no banco de dados
     $.ajax({
-        url: 'https://localhost/backend/delivery/' + id,
+        url: 'https://localhost/monorepo_husky/backend/delivery/' + id,
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
@@ -18,7 +18,7 @@ $(document).ready(function () {
 
     //Requisição que busca todos os status  
     $.ajax({
-        url: 'https://localhost/backend/status/',
+        url: 'https://localhost/monorepo_husky/backend/status/',
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
@@ -31,7 +31,7 @@ $(document).ready(function () {
 
     //Requisição que busca todos os motoboys
     $.ajax({
-        url: 'https://localhost/backend/motoboy/',
+        url: 'https://localhost/monorepo_husky/backend/motoboy/',
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
@@ -51,7 +51,7 @@ $(document).ready(function () {
         };
 
         $.ajax({
-            url: 'https://localhost/backend/web/changeStatusDelivery',
+            url: 'https://localhost/monorepo_husky/backend/web/changeStatusDelivery',
             type: 'POST',
             dataType: "JSON",
             data: request,
@@ -74,7 +74,7 @@ $(document).ready(function () {
         };
 
         $.ajax({
-            url: 'https://localhost/backend/web/changeMotoboyDelivery',
+            url: 'https://localhost/monorepo_husky/backend/web/changeMotoboyDelivery',
             type: 'POST',
             dataType: "JSON",
             data: request,
