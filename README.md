@@ -16,7 +16,7 @@ Essa aplicação é feita com PHP puro e utiliza todas as normas de programaçã
 
 1° passo: 
 
-Dentro do diretório raiz do seu servidor apache (htdocs ou WWW), insira a pasta desse projeto com nome monorepo_husky ou através do git, utilizando o comando git clone "https://github.com/netocastro/monorepo_husky.git" (sem as aspas). Caso não seja possível colocar no diretório raiz, será necessário mudar as rotas das requisições ajax no jquery, que será explicado mais adiante.
+Dentro do diretório raiz do seu servidor apache (htdocs ou WWW), insira a pasta desse projeto com nome monorepo_husky ou através do git, utilizando o comando git clone https://github.com/netocastro/monorepo_husky.git. Caso não seja possível colocar no diretório raiz, será necessário mudar as rotas das requisições ajax no jquery, que será explicado mais adiante.
 
 2° passo:  
 
