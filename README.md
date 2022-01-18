@@ -80,10 +80,8 @@ a url da constante ui para o diretório atual da pasta backend.
         layout: "StandaloneLayout"
     });
 
-    Então a rota para docuemtação ficará:
-
+    Então a rota para documentação ficará:
     http://localhost/<meu_diretorio>/monorepo_husky/backend/documentation
-
 
 
 Depois disso é só acessar o projeto através do navegador, cliente de API REST (insomnia ou postman) ou através da documentação dessa API, apartir da do endpoint acima pra poder fazer as requisições com swagger.
@@ -215,4 +213,4 @@ Exemplo:
 + O TAMANHO DA PASTA DO PROJETO ESTÁ GRANDE POR CAUSA DA PASTA DO SWAGGER.
 
 + AS CHAVES ESTRANGEIRAS DA TABELA DELIVERY DEVEM SER ADICIONADAS DEPENDENDO DO REQUERIMENTO DO PROJETO.
-SENDO ASSIM, FORAM COLOCADAS TODAS AS CHAVES ESTRANGEIRAS COM UPDATE E DELETE CASCADE, DESSA FORMA OS AVALIADORES PODEM EXERCER O CRUD SEM SE PREOCUPAR COM AS RESTRIÇÕES.
+SENDO ASSIM, FORAM COLOCADAS TODAS AS CHAVES ESTRANGEIRAS COM UPDATE E DELETE CASCADE, DESSA FORMA OS AVALIADORES PODEM EXECUTAR O CRUD SEM SE PREOCUPAR COM AS RESTRIÇÕES.
