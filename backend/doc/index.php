@@ -38,7 +38,7 @@
     window.onload = function() {
       // Begin Swagger UI call region
       const ui = SwaggerUIBundle({
-        url: "https://localhost/monorepo_husky/backend/doc/Api.php",
+        url: "http://localhost/monorepo_husky/backend/doc/Api.php",
         dom_id: '#swagger-ui',
         deepLinking: true,
         presets: [
