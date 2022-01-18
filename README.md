@@ -67,7 +67,7 @@ Caso o passo 1 não tenha sido seguido, é preciso ir na pasta documentation, no
 a url da constante ui para o diretório atual da pasta backend.
 
     const ui = SwaggerUIBundle({
-        url: "https://localhost/<meu_diretorio>/monorepo_husky/backend/documentation/Api.php",
+        url: "https://localhost/<meu_diretorio>/monorepo_husky/backend/doc/Api.php",
         dom_id: '#swagger-ui',
         deepLinking: true,
         presets: [
@@ -81,7 +81,7 @@ a url da constante ui para o diretório atual da pasta backend.
     });
 
     Então a rota para documentação ficará:
-    http://localhost/<meu_diretorio>/monorepo_husky/backend/documentation
+    http://localhost/<meu_diretorio>/monorepo_husky/backend/doc
 
 
 Depois disso é só acessar o projeto através do navegador, cliente de API REST (insomnia ou postman) ou através da documentação dessa API, apartir da do endpoint acima pra poder fazer as requisições com swagger.
@@ -90,7 +90,7 @@ Depois disso é só acessar o projeto através do navegador, cliente de API REST
 O BASE_PATH reconhece automaticamente se o servidor é HTTP ou HTTPS. Se você estiver utilizando um certificado SSL, retire os comentários das linhas 10, 11 e 12 no arquivo .htaccess que se encontra na raiz do projeto, removendo o "#". 
 
 
-Depois disso é só acessar o projeto através do navegador, cliente de API REST (insomnia ou postman) ou através da documentação dessa API, apartir da rota /documentation pra poder fazer as requisições com swagger.
+Depois disso é só acessar o projeto através do navegador, cliente de API REST (insomnia ou postman) ou através da documentação dessa API, apartir da rota /doc pra poder fazer as requisições com swagger.
 
 
 ### Explicando o Backend
