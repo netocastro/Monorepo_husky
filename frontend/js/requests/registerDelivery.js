@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    
+    $('#register-delivery').attr('action','http://localhost/monorepo_husky/backend/delivery');
 
     // Requisição que busca todos os Motoboys.
     $.ajax({
